@@ -22,12 +22,10 @@ public class TestPacket extends Packet {
     @Override
     public void read(final PacketBuffer buffer) {
         this.message = buffer.readUTF8();
-        System.out.println("TestPacket 1: " + this.message);
     }
 
     @Override
     public void write(final PacketBuffer buffer) {
         buffer.writeUTF8(this.message);
-        System.out.println("TestPacket 2: " + this.message);
     }
 }

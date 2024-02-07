@@ -19,8 +19,6 @@ public class PacketChannelInboundHandler extends SimpleChannelInboundHandler<Pac
 
     @Override
     protected void messageReceived(final ChannelHandlerContext ctx, final Packet msg) throws Exception {
-        System.out.println("Received message: " + msg.getClass().getSimpleName());
-
         EventManager.call(new PacketReceivedEvent(msg, ctx));
     }
 }

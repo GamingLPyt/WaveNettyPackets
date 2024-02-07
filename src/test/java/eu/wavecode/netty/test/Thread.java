@@ -25,8 +25,6 @@ public class Thread implements Runnable {
     @Override
     public void run() {
         int i = 0;
-
-
         Channel channel = this.simpleNettyClient.getChannel();
         final TestPacket testPacket = new TestPacket();
         testPacket.setMessage("Hello, World!");
@@ -43,9 +41,6 @@ public class Thread implements Runnable {
                 } catch (final InterruptedException e) {
                     e.printStackTrace();
                 }
-            } else {
-                System.out.println("Channel is null or not active");
-                channel = this.simpleNettyClient.getChannel();
-            }
+            } else channel = this.simpleNettyClient.getChannel();
     }
 }

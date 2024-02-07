@@ -36,8 +36,6 @@ public class PacketEncoder extends MessageToByteEncoder<Packet> {
     protected void encode(final ChannelHandlerContext channelHandlerContext, final Packet packet, final Buffer buffer) throws Exception {
         final int packetId = this.packetRegistry.getPacketId(packet.getClass());
 
-        System.out.println("ENCODER PacketId: " + packetId);
-
         if (packetId < 0) throw new EncoderException("Returned PacketId by registry is < 0");
 
         buffer.writeInt(packetId);
