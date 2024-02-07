@@ -22,8 +22,6 @@ public class PacketDecoder extends ByteToMessageDecoder {
 
     public PacketDecoder(final IPacketRegistry packetRegistry) {
         this.packetRegistry = packetRegistry;
-
-        System.out.println("DECODER: PacketDecoder created");
     }
 
     @Override
